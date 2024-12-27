@@ -1,7 +1,17 @@
+/* eslint-disable react/prop-types */
 import './Product.css'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+
+
+
 const Product = (props) => {
-    const {img, name, seller, quantity, price, ratings} =props.product
+    const {img, name, seller,  price, ratings} =props.product
+    
+    const hendelAddToCart = props.hendelAddToCart
+
+    
     return (
         <div className='product'>
             <img src={img} alt="" />
@@ -9,7 +19,10 @@ const Product = (props) => {
             <h4 className='price'>Price:${price}</h4>
             <p className='info'>Manufacturer:{seller}</p>
             <p className='reating'>Rating: {ratings}</p>
-            <button className='btn'>Add To Cart</button>
+            <button className='btn' onClick={()=>hendelAddToCart(props.product)}>
+                Add To Cart
+                <FontAwesomeIcon icon={faShoppingCart} />
+                </button>
 
         </div>
     );

@@ -9,3 +9,24 @@
     grid-template-columns: repeat(3,1fr);
     gap:20px;
 }
+.cart{
+ background-color: bisque;
+ padding-left: 60px;
+}
+
+.btn1{
+    margin-top: 40px;
+    width: 232px;
+height: 48px;
+flex-shrink: 0;
+border-radius: 4px;
+background: #FF3030;
+}
+.btn2{
+    width: 232px;
+height: 48px;
+flex-shrink: 0;
+border-radius: 4px;
+background: #F90;
+margin-top: 17px;
+}
