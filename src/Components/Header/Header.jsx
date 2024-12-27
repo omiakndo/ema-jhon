@@ -2,6 +2,7 @@
 import './Header.css'
 import logo from '../../images/Logo.svg';
 
+
 const Header = () => {
     return (
         <nav className="header">
@@ -12,6 +13,7 @@ const Header = () => {
             <a href="/order">ORDER</a>
             <a href="/login">LOGIN</a>
            </div>
+         
         </nav>
     );
 };
