@@ -1,0 +1,27 @@
+ .cart{
+    background-color: bisque;
+    padding-left: 30px;
+    padding-top: 100px;
+      position: sticky;
+        top: 0;
+ }
+       
+      
+
+
+.btn1{
+    margin-top: 40px;
+    width: 232px;
+height: 48px;
+flex-shrink: 0;
+border-radius: 4px;
+background: #FF3030;
+}
+.btn2{
+    width: 232px;
+height: 48px;
+flex-shrink: 0;
+border-radius: 4px;
+background: #F90;
+margin-top: 17px;
+}

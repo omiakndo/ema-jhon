@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './Shop.css'
 import { useEffect } from 'react';
 import Product from '../Product/Product';
+import Cart from '../Cart/Cart';
 
 const Shop = () => {
     const [products , setProducts] = useState([]);
@@ -18,13 +19,7 @@ const Shop = () => {
        setCart(newCart)
     }
     
-        const reducer = (pre , cur) => pre + cur.price;
-        const total = cart.reduce(reducer,0)
-        console.log(total)
-
        
-            const totalTax = total * 0.01
-            const grandTotal = total + totalTax
     
     return (
         <div className='shop'>
@@ -40,15 +35,7 @@ const Shop = () => {
             </div>
 
             <div className='cart'>
-               
-                <h1>Order Summary</h1>
-                <p>Selected Items: {cart.length}</p>
-                <p>Total Price: ${total}</p>
-                <p>Total Shipping Charge: $5</p>
-                <p>Tax: ${parseInt(totalTax)}</p>
-                <h2>Grand Total: ${parseInt(grandTotal)}</h2>
-                <button className='btn1'>Clear Cart</button>
-                <button className='btn2'>Review Order</button>
+              <Cart cart={cart}></Cart>
             </div>
            
         </div>
