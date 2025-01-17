@@ -4,7 +4,7 @@ import './Cart.css'
 
 const Cart = ({cart}) => {
 
-    console.log(cart)
+   
 
     const reducer = (pre , cur) => pre + cur.price;
     
@@ -18,7 +18,7 @@ const Cart = ({cart}) => {
 
    
         const totalTax = total * 7/100
-        const grandTotal = total + totalTax +5
+        const grandTotal = total + totalTax +shipping
     return (
         <div className='cart'>
              
