@@ -24,18 +24,28 @@ const Shop = () => {
                 const quantity = storeCart[id]
             addedProduct.quantity = quantity
             saveCart.push(addedProduct)
+           
             }
-            
-            
-            console.log(addedProduct )
-         
         }
-      setCart(saveCart)
-        console.log(storeCart)
-    },[products])
+      setCart(saveCart)      
+    },[products]) 
+
     const [cart , setCart] = useState([])
+
     const hendelAddToCart =(product)=>{
-       const newCart = [...cart , product]
+    //    const newCart = [...cart , product]
+    let newCart = []
+     const exists = cart.find(pb => pb.id === product.id)
+      if(!exists){
+        product.quantity=1;
+        newCart =[...cart,product]
+      }
+      else{
+        exists.quantity = exists.quantity + 1;
+        const remaning = cart .filter(pd => pd.id !== product.id)
+        newCart = [...remaning , exists]
+      }
+
        setCart(newCart)
        addToDb(product.id)
     }
