@@ -1,4 +1,4 @@
-.header{
+/* .header{
   height: 80px;
     background-color: #1C2B35;
     display: flex;
@@ -17,4 +17,13 @@ nav.header a{
 
 nav.header a:hover{
     color: yellow;
+} */
+.cc{
+    width: 100%;
+}
+@media screen and (max-width: 500px) {
+    .cc{
+    width: 600px;
+
+    }
 }

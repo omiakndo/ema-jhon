@@ -27,19 +27,20 @@ const Orders = () => {
         navigate(-1)
      }
     return (
-        <div className='shop'>
-           <div className='mt-40 mx-auto'>
+        <div className='md:flex'>
+           <div className='mt-40 mx-auto '>
             
             {
                 cart.map(item => <ReviewItem key={item.id} item ={item} hendelRemoveCart={hendelRemoveCart}></ReviewItem>)
             }
            </div>
-           <div className='cart'>
+
+           <div className='mt-10 md:mt-56 mx-auto rounded-lg'>
             <Cart cart={cart} hendelRemoveAllCart={hendelRemoveAllCart}>
             <Link to='/checkout' >
-            <button className='btn2'>Proceed Checkout</button>
+            <button className='btn2 ms-6'>Proceed Checkout</button>
             </Link>
-            <button className='w-9/12 rounded-md bg-slate-500 h-12 mt-4' onClick={hendelGoBack}>Go Back</button>
+            <button className='w-9/12 mb-14 ms-8 rounded-md bg-slate-500 h-12 mt-4' onClick={hendelGoBack}>Go Back</button>
             </Cart>
            </div>
         </div>
