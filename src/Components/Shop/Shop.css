@@ -4,9 +4,9 @@
     grid-template-columns: 4fr 1fr;
   
 }
-.shop-item{
+/* .shop-item{
     margin: 60px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap:20px;
-}
+} */
