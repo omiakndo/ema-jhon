@@ -4,7 +4,8 @@ import './Shop.css'
 import { useEffect } from 'react';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
     const [products , setProducts] = useState([]);
@@ -50,7 +51,11 @@ const Shop = () => {
        addToDb(product.id)
     }
     
-       
+    // hendelRemoveAllCart
+    const hendelRemoveAllCart = ()=>{
+      setCart([])
+      deleteShoppingCart()
+    }
     
     return (
         <div className='shop '>
@@ -67,7 +72,11 @@ const Shop = () => {
             </div>
 
             <div className='cart'>
-              <Cart cart={cart}></Cart>
+              <Cart cart={cart} hendelRemoveAllCart={hendelRemoveAllCart}>
+               <Link to='/order'>
+               <button className='btn2'>Review Order </button>
+               </Link>
+              </Cart>
             </div>
            
         </div>

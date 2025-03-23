@@ -2,7 +2,7 @@
 import './Cart.css'
 
 
-const Cart = ({cart}) => {
+const Cart = ({cart, hendelRemoveAllCart, children}) => {
 
    let quantity = 0;
    let  totalPrice = 0;
@@ -34,8 +34,8 @@ const Cart = ({cart}) => {
                 <p>Total Shipping Charge: ${shipping}</p>
                 <p>Tax: ${parseInt(totalTax)}</p>
                 <h2>Grand Total: ${parseInt(grandTotal)}</h2>
-                <button className='btn1'>Clear Cart</button>
-                <button className='btn2'>Review Order</button>
+                <button onClick={hendelRemoveAllCart} className='btn1'>Clear All Cart</button>
+                {children}
         </div>
     );
 };

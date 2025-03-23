@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate, useNavigation } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
-import { removeFromDb } from '../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 
 
 const Orders = () => {
@@ -16,6 +16,16 @@ const Orders = () => {
         setCart(remaining)
         removeFromDb(id)
      }
+
+     const hendelRemoveAllCart = () =>{
+        setCart([])
+        deleteShoppingCart();
+     }
+
+     const navigate = useNavigate()
+     const hendelGoBack =()=>{
+        navigate(-1)
+     }
     return (
         <div className='shop'>
            <div className='mt-40 mx-auto'>
@@ -25,7 +35,12 @@ const Orders = () => {
             }
            </div>
            <div className='cart'>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart} hendelRemoveAllCart={hendelRemoveAllCart}>
+            <Link to='/checkout' >
+            <button className='btn2'>Proceed Checkout</button>
+            </Link>
+            <button className='w-9/12 rounded-md bg-slate-500 h-12 mt-4' onClick={hendelGoBack}>Go Back</button>
+            </Cart>
            </div>
         </div>
     );
